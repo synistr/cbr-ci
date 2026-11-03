@@ -34,7 +34,7 @@ jobs:
             > "$RUNNER_TEMP/known_hosts"
           export GIT_SSH_COMMAND="ssh -i $key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$RUNNER_TEMP/known_hosts"
           git init -q .
-          git remote add origin git@github.com:synistr/camtok.git
+          git remote add origin git@github.com:synistr/cbr.git
           git fetch -q --depth 1 origin "$SHA"
           git checkout -q FETCH_HEAD
           rm "$key"
