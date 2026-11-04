@@ -7,6 +7,9 @@ on:
       sha:
         description: Commit to look at
         required: true
+      only:
+        description: Comma-separated shots to take (default all)
+        default: ''
 
 concurrency:
   group: poses
@@ -40,3 +43,4 @@ jobs:
       - uses: ./.github/actions/duo-poses
         with:
           artifact-key: ${{ secrets.ARTIFACT_KEY }}
+          only: ${{ inputs.only }}
